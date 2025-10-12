@@ -1,8 +1,26 @@
+from cryptography.fernet import Fernet
+
+"""
+def write_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)"""
+
+def load_key():
+    file = open("key.key", "rb")
+    key = file.read()
+    file.close()
+    return key
+
+
+key = load_key()
+fer = Fernet(key)
+
 print("Welcome to Password Manager!")
 
 def add_password(account_name, password):
     with open("passwords.txt", "a") as f:
-        f.write(f"{account_name}|{password}\n")
+        f.write(f"{account_name}|{fer.encrypt(password.encode()).decode()}\n")
         print(f"your {account_name} password added successfully.")
 
 def view_password(account_name):
@@ -11,7 +29,7 @@ def view_password(account_name):
         for line in read_line:
             a_name, passw = line.split("|")
             if a_name.lower() == account_name.lower():
-                print(f"Account Name: {account_name}, Password: {passw}".rstrip())
+                print(f"Account Name: {account_name}, Password: {fer.decrypt(passw.encode()).decode()}".rstrip())
 
 
 while True:
@@ -40,4 +58,3 @@ while True:
         break
         print("Thanks for using Password Manager!")
         print("Goodbye!")
-
