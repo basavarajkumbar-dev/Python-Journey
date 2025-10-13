@@ -57,6 +57,6 @@ while True:
         else:
             view_password(account_name)
     elif choice.lower() == "q":
-        break
         print("Thanks for using Password Manager!")
         print("Goodbye!")
+        break
