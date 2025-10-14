@@ -60,3 +60,5 @@ while True:
         print("Thanks for using Password Manager!")
         print("Goodbye!")
         break
+    else:
+        print("Invalid input! Enter a valid input.")

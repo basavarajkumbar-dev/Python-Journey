@@ -10,4 +10,5 @@ for post in posts:
     title = post.find("h3", class_ = "post-title entry-title")
     post_link = title.find("a").get("href")
 
-    print(f"Post Title: {title.text.strip()}\nPost Link: {post_link}\n")
+    with open("post_details.txt", "a") as f:
+        f.write(f"Post Title: {title.text.strip()}\nPost Link: {post_link}\n")
