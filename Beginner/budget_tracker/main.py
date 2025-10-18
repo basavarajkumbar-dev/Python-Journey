@@ -7,19 +7,22 @@ print("Welcome to Personal Finance Tracker!")
 filename = "transactions.csv"
 
 def load_from_file(filename):
-    with open(filename, "r", newline='', encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+    try:
+        with open(filename, "r", newline='', encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            transactions_list = []
+            for item in reader:
+                transcation = {
+                    'id': item["ID"],
+                    'date':item["DATE"],
+                    'type':item["TYPE"],
+                    'amount': item["AMOUNT"],
+                    'category': item["CATEGORY"],
+                    'description': item["DESCRIPTION"]
+                }
+                transactions_list.append(transcation)
+    except FileNotFoundError:
         transactions_list = []
-        for item in reader:
-            transcation = {
-                'id': item["ID"],
-                'date':item["DATE"],
-                'type':item["TYPE"],
-                'amount': item["AMOUNT"],
-                'category': item["CATEGORY"],
-                'description': item["DESCRIPTION"]
-            }
-            transactions_list.append(transcation)
     
     return transactions_list
 
