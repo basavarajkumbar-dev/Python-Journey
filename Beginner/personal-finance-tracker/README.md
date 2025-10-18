@@ -15,6 +15,6 @@ A Python-based command-line application to manage and analyze personal finances.
 
 ## Getting Started
 ```bash
-git clone https://github.com/basavarajkumbar-dev/Python-Journey/personal-finance-tracker.git
-cd personal-finance-tracker
+git clone https://github.com/basavarajkumbar-dev/Python-Journey.git
+cd Beginner/personal-finance-tracker/
 python finance_tracker.py
