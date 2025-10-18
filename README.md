@@ -1,9 +1,9 @@
-🐍 Python Journey 🚀
+# Python Journey 🚀
 
 Welcome to my Python Journey Repository!
 This repo is a collection of all my learnings, practice scripts, projects, and notes as I explore Python — from basics to advanced concepts.
 
-📘 About This Repository
+## About This Repository
 
 This repository includes:
 
