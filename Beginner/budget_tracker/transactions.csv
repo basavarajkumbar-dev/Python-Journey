@@ -1,9 +1,0 @@
-ID,DATE,TYPE,AMOUNT,CATEGORY,DESCRIPTION
-1,2025-09-31,Income,25000,Salary,Monthly Paycheck
-2,2025-01-01,Expense,2000,Rent,Monthly home rent
-3,2025-09-15,Expense,379,Recharge,Monthly mobile bill
-4,2025-09-05,Expense,300,Food,Had breakfast and lunch
-5,2025-09-08,Expense,200,Food,Had full meals
-6,2025-01-01,Income,20000,Salary,Monthly Paycheck
-7,2025-01-01,Income,4000,Invest,Profit on invested amount
-8,2025-01-01,Expense,4500,Invest,Monthly SIP for Mutual fund
