@@ -55,3 +55,22 @@ def view_password(account_name):
             
     except FileNotFoundError:
         print("Password file not found!")
+
+def delete_password(account_name):
+    try:
+        with open("passwords.txt", "r") as f:
+            lines = f.readlines()
+        
+        with open("passwords.txt", "w") as file:
+            found = False
+            for line in lines:
+                a_name, passw = line.split("|", 1)
+                if a_name.lower() == account_name.lower():
+                    found = True
+                    continue
+                file.write(line)
+                   
+            print(f"Account '{account_name}' password has been deleted successfully!")
+            
+    except FileNotFoundError:
+        print("Password file not found!")

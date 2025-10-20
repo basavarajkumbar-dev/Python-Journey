@@ -17,7 +17,7 @@ container = []
 print("welcome to Password Generator")
 
 while True:
-    print("1. Generate Password and Save to file\n2. Add Password and Save to file\n3. View Passwords\n4. Exit")
+    print("1. Generate Password and Save to file\n2. Add Password and Save to file\n3. View Passwords\n4. Delete Password\n5. Exit")
     choice = input("Enter your choice: ")
 
     if choice == "1":
@@ -55,6 +55,15 @@ while True:
         else:
             view_password(account_name)
     elif choice == "4":
+        try:
+            account_name = input("Enter the account name: ")
+            if not account_name:
+                raise ValueError("The Account name or Password should not be empty")
+        except ValueError as e:
+            print(f"Error: {e}")
+        else:
+            delete_password(account_name)
+    elif choice == "5":
         print("Thanks for using Password Generator!")
         print("Goodbye!")
         break
