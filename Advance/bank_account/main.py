@@ -46,7 +46,7 @@ def new_account():
 
             if balance < 0:
                 raise ValueError("Initial blance should be greater than 0")
-            if not balance.strip():
+            if not balance:
                 raise ValueError("Initial balance not entered! Please enter a valid number.")
             
             if not name or not account_type:
@@ -87,7 +87,7 @@ def deposit_amount():
             if amount < 0:
                 raise ValueError("Amount should be greater than 0")
             
-            if not amount.strip():
+            if not amount:
                 raise ValueError("Amount not entered! Please enter a valid number.")
             
         except ValueError as e:
@@ -126,7 +126,7 @@ def withdraw_amount():
 
             if amount <= 0:
                 raise ValueError("Amount should be greater than 0")
-            if not amount.strip():
+            if not amount:
                 raise ValueError("Amount not entered! Please enter a valid number.")
             
         except ValueError as e:
@@ -199,7 +199,7 @@ def transfer_amount():
             if amount <= 0:
                 raise ValueError("Amount should be greater than 0")
             
-            if not amount.strip():
+            if not amount:
                 raise ValueError("Amount not entered! Please enter a valid number.")
 
             if not sender_account or not receiver_account:
